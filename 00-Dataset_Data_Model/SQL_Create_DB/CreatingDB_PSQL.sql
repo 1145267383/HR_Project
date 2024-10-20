@@ -1,26 +1,27 @@
--- sudo service mysql start
--- sudo mysql_secure_installation (return Pass)
--- mysql -u root -p (12345678)
+-- sudo service postgresql status
+-- sudo service postgresql start
+-- sudo -u postgres psql
+-- \l
+-- CREATE DATABASE PDEPI; 
+-- \c PDEPI;
+-- \dt 
 
- SHOW DATABASES;
- CREATE DATABASE HR_System;
- USE HR_System;
- SHOW TABLES;
+
 -- Create table for storing education levels
 CREATE TABLE EducationLevels (
-    EducationLevelID INT AUTO_INCREMENT PRIMARY KEY, -- Unique identifier for each education level, auto-incremented
+    EducationLevelID SERIAL PRIMARY KEY, -- Unique identifier for each education level, auto-incremented
     EducationLevel VARCHAR(50) NOT NULL -- Description of the education level (e.g., Bachelors, Masters)
 );
 
 -- Create table for storing satisfaction levels
 CREATE TABLE SatisfactionLevels (
-    SatisfactionID INT AUTO_INCREMENT PRIMARY KEY, -- Unique identifier for each satisfaction level, auto-incremented
+    SatisfactionID SERIAL PRIMARY KEY, -- Unique identifier for each satisfaction level, auto-incremented
     SatisfactionLevel VARCHAR(50) NOT NULL -- Description of satisfaction level (e.g., Satisfied, Dissatisfied)
 );
 
 -- Create table for storing rating levels
-CREATE TABLE Ratings (
-    RatingID INT AUTO_INCREMENT PRIMARY KEY, -- Unique identifier for each rating level, auto-incremented
+CREATE TABLE RatingLevels (
+    RatingID SERIAL PRIMARY KEY, -- Unique identifier for each rating level, auto-incremented
     RatingLevel VARCHAR(50) NOT NULL -- Description of performance rating (e.g., Meets Expectation, Above and Beyond)
 );
 
@@ -53,7 +54,7 @@ CREATE TABLE Employees (
 );
 
 -- Create table for storing performance review details
-CREATE TABLE PerformanceReviews (
+CREATE TABLE PerformanceRating (
     PerformanceID VARCHAR(20) PRIMARY KEY, -- Unique identifier for each performance review
     EmployeeID VARCHAR(20) REFERENCES Employees(EmployeeID), -- Foreign key referencing Employees table
     ReviewDate DATE, -- Date the performance review took place
@@ -63,12 +64,12 @@ CREATE TABLE PerformanceReviews (
     TrainingOpportunitiesWithinYear INT, -- Number of training opportunities offered within the year
     TrainingOpportunitiesTaken INT, -- Number of training opportunities taken by the employee
     WorkLifeBalance INT, -- Work-life balance rating (references SatisfactionLevels)
-    SelfRating INT, -- Self-rating by the employee (references Ratings)
-    ManagerRating INT, -- Rating given by the manager (references Ratings)
+    SelfRating INT, -- Self-rating by the employee (references RatingLevels)
+    ManagerRating INT, -- Rating given by the manager (references RatingLevels)
     FOREIGN KEY (EnvironmentSatisfaction) REFERENCES SatisfactionLevels(SatisfactionID), -- Establish foreign key relationship to SatisfactionLevels table
     FOREIGN KEY (JobSatisfaction) REFERENCES SatisfactionLevels(SatisfactionID), -- Job satisfaction foreign key
     FOREIGN KEY (RelationshipSatisfaction) REFERENCES SatisfactionLevels(SatisfactionID), -- Relationship satisfaction foreign key
     FOREIGN KEY (WorkLifeBalance) REFERENCES SatisfactionLevels(SatisfactionID), -- Work-life balance foreign key
-    FOREIGN KEY (SelfRating) REFERENCES Ratings(RatingID), -- Foreign key for self-rating referencing Ratings
-    FOREIGN KEY (ManagerRating) REFERENCES Ratings(RatingID) -- Foreign key for manager rating referencing Ratings
+    FOREIGN KEY (SelfRating) REFERENCES RatingLevels(RatingID), -- Foreign key for self-rating referencing RatingLevels
+    FOREIGN KEY (ManagerRating) REFERENCES RatingLevels(RatingID) -- Foreign key for manager rating referencing RatingLevels
 );

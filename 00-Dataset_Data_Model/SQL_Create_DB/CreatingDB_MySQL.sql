@@ -1,27 +1,26 @@
--- عرض قواعد البيانات
--- SELECT name FROM sys.databases;
+-- sudo service mysql start
+-- sudo mysql_secure_installation (return Pass)
+-- mysql -u root -p (12345678)
 
--- DROP DATABASE HR_system;
-
--- CREATE DATABASE HR_system;
--- USE HR_system;
--- SELECT * FROM sys.tables;
-
+ SHOW DATABASES;
+ CREATE DATABASE HR_System;
+ USE HR_System;
+ SHOW TABLES;
 -- Create table for storing education levels
 CREATE TABLE EducationLevels (
-    EducationLevelID INT PRIMARY KEY, -- Unique identifier for each education level
+    EducationLevelID INT AUTO_INCREMENT PRIMARY KEY, -- Unique identifier for each education level, auto-incremented
     EducationLevel VARCHAR(50) NOT NULL -- Description of the education level (e.g., Bachelors, Masters)
 );
 
 -- Create table for storing satisfaction levels
 CREATE TABLE SatisfactionLevels (
-    SatisfactionID INT PRIMARY KEY, -- Unique identifier for each satisfaction level
+    SatisfactionID INT AUTO_INCREMENT PRIMARY KEY, -- Unique identifier for each satisfaction level, auto-incremented
     SatisfactionLevel VARCHAR(50) NOT NULL -- Description of satisfaction level (e.g., Satisfied, Dissatisfied)
 );
 
 -- Create table for storing rating levels
-CREATE TABLE Ratings (
-    RatingID INT PRIMARY KEY, -- Unique identifier for each rating level
+CREATE TABLE RatingLevels (
+    RatingID INT AUTO_INCREMENT PRIMARY KEY, -- Unique identifier for each rating level, auto-incremented
     RatingLevel VARCHAR(50) NOT NULL -- Description of performance rating (e.g., Meets Expectation, Above and Beyond)
 );
 
@@ -43,9 +42,9 @@ CREATE TABLE Employees (
     MaritalStatus VARCHAR(20), -- Marital status of the employee
     Salary DECIMAL(10, 2), -- Employee's salary
     StockOptionLevel INT, -- Employee's stock option level
-    OverTime NVARCHAR(3), -- Whether the employee works overtime or not (0 = No, 1 = Yes)
+    OverTime NVARCHAR(3), -- Whether the employee works overtime or not (TRUE = Yes, FALSE = No)
     HireDate DATE, -- Date the employee was hired
-    Attrition NVARCHAR(3), -- Whether the employee has left the company or not (0 = No, 1 = Yes)
+    Attrition NVARCHAR(3), -- Whether the employee has left the company or not (TRUE = Yes, FALSE = No)
     YearsAtCompany INT, -- Total number of years the employee has worked at the company
     YearsInMostRecentRole INT, -- Number of years in the employee's most recent role
     YearsSinceLastPromotion INT, -- Number of years since the employee's last promotion
@@ -54,9 +53,9 @@ CREATE TABLE Employees (
 );
 
 -- Create table for storing performance review details
-CREATE TABLE PerformanceReviews (
+CREATE TABLE PerformanceRating (
     PerformanceID VARCHAR(20) PRIMARY KEY, -- Unique identifier for each performance review
-    EmployeeID VARCHAR(20), -- Foreign key referencing Employees table
+    EmployeeID VARCHAR(20) REFERENCES Employees(EmployeeID), -- Foreign key referencing Employees table
     ReviewDate DATE, -- Date the performance review took place
     EnvironmentSatisfaction INT, -- Satisfaction with work environment (references SatisfactionLevels)
     JobSatisfaction INT, -- Satisfaction with the job (references SatisfactionLevels)
@@ -64,13 +63,12 @@ CREATE TABLE PerformanceReviews (
     TrainingOpportunitiesWithinYear INT, -- Number of training opportunities offered within the year
     TrainingOpportunitiesTaken INT, -- Number of training opportunities taken by the employee
     WorkLifeBalance INT, -- Work-life balance rating (references SatisfactionLevels)
-    SelfRating INT, -- Self-rating by the employee (references Ratings)
-    ManagerRating INT, -- Rating given by the manager (references Ratings),
-    FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID), -- Establish a foreign key relationship to the Employees table
+    SelfRating INT, -- Self-rating by the employee (references RatingLevels)
+    ManagerRating INT, -- Rating given by the manager (references RatingLevels)
     FOREIGN KEY (EnvironmentSatisfaction) REFERENCES SatisfactionLevels(SatisfactionID), -- Establish foreign key relationship to SatisfactionLevels table
     FOREIGN KEY (JobSatisfaction) REFERENCES SatisfactionLevels(SatisfactionID), -- Job satisfaction foreign key
     FOREIGN KEY (RelationshipSatisfaction) REFERENCES SatisfactionLevels(SatisfactionID), -- Relationship satisfaction foreign key
     FOREIGN KEY (WorkLifeBalance) REFERENCES SatisfactionLevels(SatisfactionID), -- Work-life balance foreign key
-    FOREIGN KEY (SelfRating) REFERENCES Ratings(RatingID), -- Foreign key for self-rating referencing Ratings
-    FOREIGN KEY (ManagerRating) REFERENCES Ratings(RatingID) -- Foreign key for manager rating referencing Ratings
+    FOREIGN KEY (SelfRating) REFERENCES RatingLevels(RatingID), -- Foreign key for self-rating referencing RatingLevels
+    FOREIGN KEY (ManagerRating) REFERENCES RatingLevels(RatingID) -- Foreign key for manager rating referencing RatingLevels
 );
