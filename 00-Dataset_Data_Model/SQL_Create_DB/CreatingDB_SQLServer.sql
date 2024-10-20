@@ -1,4 +1,3 @@
--- عرض قواعد البيانات
 -- SELECT name FROM sys.databases;
 
 -- DROP DATABASE HR_system;
