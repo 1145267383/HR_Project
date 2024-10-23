@@ -40,7 +40,7 @@ CREATE TABLE Employees (
     EducationField VARCHAR(50), -- Field of education or study
     JobRole VARCHAR(50), -- Job role of the employee
     MaritalStatus VARCHAR(20), -- Marital status of the employee
-    Salary DECIMAL(10, 2), -- Employee's salary
+    Salary FLOAT, -- Employee's salary
     StockOptionLevel INT, -- Employee's stock option level
     OverTime NVARCHAR(3), -- Whether the employee works overtime or not (0 = No, 1 = Yes)
     HireDate DATETIME, -- Date the employee was hired
