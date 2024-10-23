@@ -43,7 +43,7 @@ CREATE TABLE Employees (
     Salary DECIMAL(10, 2), -- Employee's salary
     StockOptionLevel INT, -- Employee's stock option level
     OverTime NVARCHAR(3), -- Whether the employee works overtime or not (0 = No, 1 = Yes)
-    HireDate DATE, -- Date the employee was hired
+    HireDate DATETIME, -- Date the employee was hired
     Attrition NVARCHAR(3), -- Whether the employee has left the company or not (0 = No, 1 = Yes)
     YearsAtCompany INT, -- Total number of years the employee has worked at the company
     YearsInMostRecentRole INT, -- Number of years in the employee's most recent role
@@ -56,7 +56,7 @@ CREATE TABLE Employees (
 CREATE TABLE PerformanceRating (
     PerformanceID VARCHAR(20) PRIMARY KEY, -- Unique identifier for each performance review
     EmployeeID VARCHAR(20), -- Foreign key referencing Employees table
-    ReviewDate DATE, -- Date the performance review took place
+    ReviewDate DATETIME, -- Date the performance review took place
     EnvironmentSatisfaction INT, -- Satisfaction with work environment (references SatisfactionLevels)
     JobSatisfaction INT, -- Satisfaction with the job (references SatisfactionLevels)
     RelationshipSatisfaction INT, -- Satisfaction with relationships at work (references SatisfactionLevels)

@@ -26,7 +26,9 @@ The relationships between these tables are governed by foreign keys, ensuring da
 To ensure the accuracy and integrity of the database, several SQL queries were executed to validate data and verify relationships between tables. 
 
 ## Conclusion:
-The process of creating and populating the database was executed flawlessly, ensuring that all necessary information was accurately represented. This was further validated through the execution of several test queries, which confirmed the correctness of the database structure and the reliability of the data.
+The process of creating and populating the database was executed flawlessly, ensuring that all necessary information was accurately represented. 
+This was further validated through the execution of several test queries, which confirmed the correctness of the database structure and the reliability of the data.
+Also, Create a View `FullEmployeePerformanceView` in one table for EDA and Visual Dashboard.
 
 
 ## Tools Used
@@ -43,7 +45,9 @@ After building the data model, we proceeded with data cleaning and preprocessing
 - Numeric fields, including `Salary`, `YearsAtCompany`, and `DistanceFromHome`, were confirmed to contain only valid numbers without any outliers or inconsistent values.
 
 ## Conclusion:
-The dataset was thoroughly examined and found to be clean, consistent, and aligned with the designed data model. There were no missing values, illogical entries, or repeated values, ensuring data integrity across all tables. 
+The dataset was thoroughly examined and found to be clean, consistent, and aligned with the designed data model. 
+There were no missing values, illogical entries, or repeated values, ensuring data integrity across all tables. 
+Also, the datasets were saved in one CSV file `06-All_Data_Employees.csv` for EDA and Visual Dashboard.
 
 
 - **Python (pandas, Matplotlib)**: For detailed data Cleaning and visual inspection.
