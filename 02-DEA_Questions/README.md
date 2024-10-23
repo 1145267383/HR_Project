@@ -1,57 +1,52 @@
 # Project: Human Resources Dataset Analysis
 
 ## Overview
-In the first week of this project a robust data model was developed, followed by the created of a relational database. The dataset was inserted into the database. The Data Validation and Relationship was Checks into the database for ensuring consistency and readiness. The ensure that the data is free of any illogical data or empty or repeated values for subsequent analysis. 
-
-This database encompasses critical employee information, educational levels, satisfaction ratings, performance ratings, and other essential metrics necessary for Human Resources (HR) analysis.
+In the second week of this project, we focused on exploratory data analysis (EDA) to identify key questions related to employee retention. This phase aimed to determine how various factors, such as salary, job satisfaction, and overtime, impact the likelihood of employees leaving the company.
 
 _________________________________
 
+## Exploratory Data Analysis (EDA) And Data Analysis Questions:
 
-## (1) Data Model and Creating DataBase :
-The dataset tables were organized into a relational database to maintain consistency and enable efficient querying. The relational database comprises the following tables:
+Based on the company's interest in studying factors influencing employee retention, the following key questions were posed:
 
-### A) Fact Tables
-- **Employees**: Contains essential employee details, including name, gender, department, salary, and employment history.
-- **PerformanceRating**: Stores details about each employee's performance rating, including satisfaction rating levels and self/manager rating levels.
+1. **Do employees who live more than 20 miles away `DistanceFromHome` have a higher tendency to leave the company `Attrition`?**
+   
+2. **Are employees with higher satisfaction levels at work `EnvironmentSatisfactionLevel` more likely to stay with the company `Attrition`?**
 
-### B) Dimension Tables
-- **EducationLevels**: Stores various education levels (e.g., Bachelors, Masters).
-- **SatisfactionLevels**: Describes different satisfaction levels related to the work environment, job satisfaction, and interpersonal relationships.
-- **RatingLevels**: Contains rating levels such as "Meets Expectation" and "Above and Beyond."
+3. **Do more `TrainingOpportunitiesTaken` reduce the likelihood of an employee leaving the company `Attrition`?**
 
-The relationships between these tables are governed by foreign keys, ensuring data integrity across the system. For instance, employee satisfaction and rating data are linked to their respective levels via foreign key relationships to the **SatisfactionLevels** and **RatingLevels** tables.
+4. **Does an increase in salary `Salary` positively impact employee retention `Attrition`?**
 
-## Data Validation and Relationship Checks
-To ensure the accuracy and integrity of the database, several SQL queries were executed to validate data and verify relationships between tables. 
+5. **Does working `OverTime` negatively impact employee retention `Attrition`?**
 
-## Conclusion:
-The process of creating and populating the database was executed flawlessly, ensuring that all necessary information was accurately represented. This was further validated through the execution of several test queries, which confirmed the correctness of the database structure and the reliability of the data.
+6. **Is there a correlation between employee `Gender` and retention rate `Attrition`?**
 
+7. **Are employees who frequently travel for business `BusinessTravel` more likely to leave the company `Attrition` than others?**
 
-## Tools Used
-- **SQL**: Utilized for creating the database, inserting the dataset, performing data validation, checking relationships, and executing queries.
+_________________________________
 
-_______________________________________
+## Results:
 
-## (2) Data Cleaning:
-After building the data model, we proceeded with data cleaning and preprocessing. Here’s a summary of the key observations:
+1. `Distance From Home` exceeding 20 miles does not have a significant impact on employee turnover.
+   
+2. `Job Satisfaction` does not show a clear influence on whether employees stay with the company.
 
-- The data had no missing values or unusual entries across all tables. Each field, such as age, salary, and years of experience, showed values within expected ranges.
-- Data entries for categorical variables like gender, marital status, and job roles were consistent without any spelling or formatting issues.
-- Date fields, such as the employee `HireDate` and `ReviewDate` in the performance review table, were in the correct format and adhered to the expected chronological order.
-- Numeric fields, including `Salary`, `YearsAtCompany`, and `DistanceFromHome`, were confirmed to contain only valid numbers without any outliers or inconsistent values.
+3. `Training Opportunities` provided to employees do not significantly affect their retention rates.
 
-## Conclusion:
-The dataset was thoroughly examined and found to be clean, consistent, and aligned with the designed data model. There were no missing values, illogical entries, or repeated values, ensuring data integrity across all tables. 
+4. `Salary` increases positively influence employee retention, with higher salaries leading to longer tenures at the company.
 
+5. `OverTime` has a negative impact on employee retention, with those working overtime more likely to leave.
 
-- **Python (pandas, Matplotlib)**: For detailed data Cleaning and visual inspection.
+6. There is a relationship between `Gender` and retention rates. Female employees are less likely to leave the company compared to male employees.
 
-_____________________________________
+7. Employees who frequently engage in `Business Travel` are more likely to leave the company than those who travel less often.
 
-## Deliverables:
-- A cleaned dataset, ready for analysis.
-- Data preprocessing notebook, showcasing steps taken to validate and clean the data.
+_________________________________
 
-The first week of the Human Resources Dataset Analysis project successfully established a well-structured database and free of any illogical data or empty or repeated values, allowing for efficient data management and analysis. This setup serves as a strong foundation for further analytical tasks in the HR domain.
+## Summary
+
+The analysis revealed that `Salary` increases and `Gender` are significant factors influencing employee retention. Higher salaries are associated with longer employee tenures, and female employees tend to have a lower attrition rate than male employees. Meanwhile, `OverTime` and frequent `Business Travel` were linked to higher turnover rates. 
+
+However, other factors such as `Job Satisfaction`, `Distance From Home`, and `Training Opportunities` did not show a clear impact on employee retention. 
+
+While these insights provide useful information, further detailed analysis and verification are needed to better understand the complex dynamics between these variables and employee retention.
