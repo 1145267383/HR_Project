@@ -196,10 +196,12 @@ _________________________________
 
 After preparing the data, the next step was to choose a suitable machine learning model. Several models were considered:
 
-- **Logistic Regression**: A baseline model for binary classification, predicting whether an employee will leave (`Attrition`).
-- **Random Forest Classifier**: An ensemble method known for handling large datasets and providing good accuracy with less overfitting.
-- **Support Vector Machines (SVM)**: Applied for its ability to handle both linear and non-linear relationships in the data.
-- **Gradient Boosting Machines (GBM)**: Considered for its performance in structured/tabular data like HR datasets.
+- **Logistic Regression (LR)**: A baseline model for binary classification, used to predict whether an employee will leave (`Attrition`).
+- **K-Nearest Neighbors (KNN)**: A simple model based on proximity, used for classifying data based on the closest neighbors.
+- **Decision Tree (DT)**: A tree-based model used to determine decision paths, known for its interpretability and ease of use.
+- **Support Vector Classifier (SVC)**: Utilized for its ability to handle both linear and non-linear relationships in the data.
+- **Naive Bayes (NB)**: A probabilistic model used for classification, particularly effective for text data.
+- **Random Forest (RF)**: An ensemble method known for handling large datasets and providing good accuracy while reducing overfitting.
 
 We used cross-validation techniques to evaluate the models and select the best performing one based on accuracy, precision, recall, and F1-score metrics.
 
