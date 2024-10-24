@@ -49,5 +49,6 @@ _________________________________
 - A fully processed dataset ready for modeling.
 - A trained and tested machine learning model capable of predicting employee attrition.
 - A detailed notebook documenting the preprocessing, model selection, and testing process.
-- App
+- Creating App
+
 The third week of the Human Resources Dataset Analysis project successfully established a robust machine learning pipeline, ensuring that the data was properly prepared, and the best model was selected to predict employee retention with high accuracy. This phase sets the foundation for deploying the model in real-world scenarios.
