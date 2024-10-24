@@ -47,7 +47,7 @@
 - **Final Presentation**: Prepare a report and presentation summarizing the project, including data analysis, model development, and deployment.
 
 ### Tools:
-- SQL, Python (pandas, Matplotlib), Tableau
+- Python (pandas, Matplotlib), Tableau
 
 ### Deliverables:
 - Visualization dashboard.
