@@ -9,9 +9,9 @@ import os
 parent_directory = os.path.dirname(os.getcwd())
 
 # Load the model, features, and scaler
-model = joblib.load(os.path.join(parent_directory, 'best_model.h5'))
-features = joblib.load(os.path.join(parent_directory, 'features.h5'))
-scaler = joblib.load(os.path.join(parent_directory, 'scaler.h5'))
+model = joblib.load(os.path.join( 'best_model.h5'))
+features = joblib.load(os.path.join( 'features.h5'))
+scaler = joblib.load(os.path.join( 'scaler.h5'))
 
 # Create a function to handle predictions
 def predict_attrition():
