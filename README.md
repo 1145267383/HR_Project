@@ -230,3 +230,59 @@ _________________________________
 - Creating App
 
 The third week of the Human Resources Dataset Analysis project successfully established a robust machine learning pipeline, ensuring that the data was properly prepared, and the best model was selected to predict employee retention with high accuracy. This phase sets the foundation for deploying the model in real-world scenarios.
+
+_______________________________
+_________________________________
+__________________________________
+
+# **Project Contributors**
+
+This project is a collaborative effort by the following team members, with responsibilities assigned on a weekly basis:
+
+### Week 1
+1. **Mohamed Sayed Ahmed Abd Al-mgyd** 
+   *Role:* Week 1 Leader and Overall Project Coordinator  
+   *Responsibilities:*  
+   - Built the initial data model and cleaned the dataset.  
+   - Conducted data preprocessing using SQL and Python (pandas, Matplotlib).  
+   - Delivered a cleaned dataset ready for analysis and a preprocessing notebook.
+- Consolidated project components and ensured their integration.  
+- Reviewed, refined, and updated deliverables to meet project requirements.  
+- Facilitated communication among team members for smooth collaboration.  
+
+### Week 2
+2. **Alyaa Ahmed Mostafa Mohamed**  
+   *Role:* Leader of Week 2  
+   *Responsibilities:*  
+   - Formulated data analysis questions relevant to organizational decision-making.  
+   - Utilized SQL and Python (pandas, Matplotlib) to explore relationships in the dataset.  
+   - Delivered a comprehensive set of analysis questions for further exploration.
+
+### Week 3
+3. **Fady Romany Lamea Faheem**  
+   *Role:* Leader of Week 3  
+   *Responsibilities:*  
+   - Designed forecasting questions based on trends in the dataset.  
+   - Created visualizations using Python (scikit-learn, pandas, Matplotlib) to answer forecasting questions.  
+   - Delivered detailed plots to support forecasting analysis.
+
+4. **Maher**  
+   *Role:* Vice Leader of Week 3  
+   *Responsibilities:*  
+   - Assisted in analyzing forecasting trends.  
+   - Supported visualization tasks and ensured data accuracy.
+
+### Week 4
+5. **Kareem Wael Mohamed**  
+   *Role:* Leader of Week 4  
+   *Responsibilities:*  
+   - Developed a Powe BI dashboard to visualize analysis results.  
+   - Prepared the final report summarizing project work and findings.
+
+6. **Abdulrahman Zaki**  
+   *Role:* Vice Leader of Week 4  
+   *Responsibilities:*  
+   - Contributed to final dashboard development.  
+   - Assisted in preparing the final presentation and report.
+
+
