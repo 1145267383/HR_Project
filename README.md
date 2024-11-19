@@ -246,9 +246,9 @@ This project is a collaborative effort by the following team members, with respo
    - Built the initial data model and cleaned the dataset.  
    - Conducted data preprocessing using SQL and Python (pandas, Matplotlib).  
    - Delivered a cleaned dataset ready for analysis and a preprocessing notebook.
-- Consolidated project components and ensured their integration.  
-- Reviewed, refined, and updated deliverables to meet project requirements.  
-- Facilitated communication among team members for smooth collaboration.  
+   - Consolidated project components and ensured their integration.  
+   - Reviewed, refined, and updated deliverables to meet project requirements.  
+   - Facilitated communication among team members for smooth collaboration.  
 
 ### Week 2
 2. **Alyaa Ahmed Mostafa Mohamed**  
